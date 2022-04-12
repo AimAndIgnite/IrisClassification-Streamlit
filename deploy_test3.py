@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1VX-PUt5SJCZQW6dqJQ6DvQdtlp3q9SfS
 """
 import sklearn
-import streamlit
+import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -16,7 +16,8 @@ import xgboost as xgb
 
 data = pd.read_csv("https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
 
-data
+if st.checkbox('Iris Dataset'):
+    data
 
 X = data.iloc[:, 0:4]
 

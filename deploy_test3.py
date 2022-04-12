@@ -16,25 +16,28 @@ import xgboost as xgb
 
 data = pd.read_csv("https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv")
 
-if st.checkbox('Iris Dataset'):
+st.header('Iris Classification Model Deployment Test')
+
+st.subheader('Datasets')
+
+if st.checkbox('Show Iris Dataset'):
     data
 
 X = data.iloc[:, 0:4]
 
-X.values
+if st.checkbox('Show Training Dataset'):
+    X.values
 
 y = data.iloc[:, 4]
 
-y
+if st.checkbox('Show Testing Dataset'):
+    y
 
+# XGB model 
 X_train, X_test, y_train, y_test = train_test_split(X.values, y, test_size=0.3, random_state=1)
-
 xgb_c = xgb.XGBClassifier(max_depth=5, learning_rate=0.1, n_estimators=100, random_state=1)
-
 xgb_c.fit(X_train, y_train)
-
 predictions = xgb_c.predict(X_test)
-
 accuracy = accuracy_score(predictions, y_test)
 
-accuracy
+st.write('Testing accuracy: ', accuracy*100, '%')

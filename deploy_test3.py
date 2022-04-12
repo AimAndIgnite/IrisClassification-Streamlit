@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1VX-PUt5SJCZQW6dqJQ6DvQdtlp3q9SfS
 """
 
-# import streamlit
+import streamlit
 
 import pandas as pd
 from sklearn.model_selection import train_test_split

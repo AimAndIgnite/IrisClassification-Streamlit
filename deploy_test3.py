@@ -48,7 +48,7 @@ input2 = st.slider('Sepal Width (cm)', 0.0, max(data["sepal.width"]), 1.0)
 input3 = st.slider('Petal Length (cm)', 0.0, max(data["petal.length"]), 1.0)
 input4 = st.slider('Petal Width (cm)', 0.0, max(data["petal.width"]), 1.0)
 
-type(input1)
+print(type(input1))
 
 # predict = xgb_c.predict(input1, input2, input3, input4)
 

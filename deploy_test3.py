@@ -23,7 +23,7 @@ st.subheader('Datasets')
 if st.checkbox('Show Iris Dataset'):
     data
 
-flower_mapping = {"Setosa": 1, "Versicolor": 2, "Virginica": 3}
+flower_mapping = {"Setosa": 0, "Versicolor": 1, "Virginica": 2}
 data['variety'] = data['variety'].map(flower_mapping)    
     
 X = data.iloc[:, 0:4]

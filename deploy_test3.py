@@ -23,6 +23,9 @@ st.subheader('Datasets')
 if st.checkbox('Show Iris Dataset'):
     data
 
+flower_mapping = {"Setosa": 1, "Versicolor": 2, "Virginica": 3}
+data['variety'] = data['variety'].map(flower_mapping)    
+    
 X = data.iloc[:, 0:4]
 
 if st.checkbox('Show Training Dataset'):

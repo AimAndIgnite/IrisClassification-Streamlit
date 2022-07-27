@@ -54,6 +54,7 @@ input4 = st.slider('Petal Width (cm)', 0.0, max(data["petal.width"]), 1.0)
 # st.write(type(input1))
 inputs = [[input1, input2, input3, input4]]
 
+@st.cache
 if st.button('Generate Prediction'):
     prediction = xgb_c.predict(inputs)
 #     print("final pred", np.squeeze(prediction, -1))
